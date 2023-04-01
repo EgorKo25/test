@@ -4,15 +4,15 @@ import (
 	"log"
 	"net/http"
 
-	"test/internal/server/handler"
-	"test/internal/server/router"
+	"test/internal/server/handlers"
+	"test/internal/server/routers"
 )
 
 func main() {
 
-	handler := handler.New()
+	hdl := handlers.New()
 
-	router := router.NewRouter(handler)
+	rtr := routers.New(hdl)
 
-	log.Println(http.ListenAndServe("127.0.0.1:8080", router))
+	log.Println(http.ListenAndServe("127.0.0.1:8080", rtr))
 }
