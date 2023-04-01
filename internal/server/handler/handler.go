@@ -86,8 +86,8 @@ func (h *Handler) solve(a, b, c float64) error {
 	des = math.Sqrt(des)
 	log.Println(des)
 
-	h.X1 = (-b + des) / 2 * a
-	h.X2 = (-b - des) / 2 * a
+	h.X1 = (-b + des) / (2 * a)
+	h.X2 = (-b - des) / (2 * a)
 
 	return nil
 }
