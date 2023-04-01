@@ -1,18 +1,18 @@
-package router
+package routers
 
 import (
-	"test/internal/server/handler"
+	"test/internal/server/handlers"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 )
 
-func NewRouter(handler *handler.Handler) chi.Router {
+func New(hdr *handlers.Handler) chi.Router {
 	r := chi.NewRouter()
 
 	r.Use(middleware.Logger)
 
-	r.HandleFunc("/solve", handler.LineS)
+	r.HandleFunc("/solve", hdr.LineS)
 
 	return r
 }
