@@ -1,4 +1,4 @@
-package handlers
+package handler
 
 import (
 	"encoding/json"
@@ -45,7 +45,7 @@ func (h *Handler) LineS(w http.ResponseWriter, r *http.Request) {
 
 		body, _ := json.Marshal(h)
 
-		w.Write(body)
+		_, _ = w.Write(body)
 		w.Header().Set("Content-Type", "application/json")
 		w.WriteHeader(http.StatusOK)
 
